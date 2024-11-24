@@ -8,11 +8,14 @@ import org.testng.annotations.Test;
 public class HomePageTest extends BaseTest {
 
     @Test
-    public void homePageTest() {
+    public void homePageTest() throws InterruptedException {
         Actions actions = new Actions(driver);
         WebElement pagesMenu = driver.findElement(By.linkText("Pages"));
         actions.moveToElement(pagesMenu).perform();
+        Thread.sleep(2000);
         WebElement contactLink = driver.findElement(By.linkText("Contact"));
+        Thread.sleep(2000);
         contactLink.click();
+        Thread.sleep(2000);
     }
 }
